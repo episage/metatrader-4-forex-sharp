@@ -1,8 +1,9 @@
-﻿namespace TradePlatform.MT4.SDK.API
+﻿using TradePlatform.MT4.Core;
+using TradePlatform.MT4.Core.Utils;
+
+namespace TradePlatform.MT4.SDK.API
 {
     using System;
-    using TradePlatform.MT4.Core;
-    using TradePlatform.MT4.Core.Utils;
 
     /// <summary>
     /// A group of functions intended for trading management.

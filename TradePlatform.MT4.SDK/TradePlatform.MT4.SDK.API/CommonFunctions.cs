@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TradePlatform.MT4.Core;
+using TradePlatform.MT4.Core.Utils;
 
 namespace TradePlatform.MT4.SDK.API
 {
-    using TradePlatform.MT4.Core;
-    using TradePlatform.MT4.Core.Utils;
-
-    /// <summary>
+	/// <summary>
     /// General-purpose functions not included into any specialized groups. 
     /// </summary>
     public static class CommonFunctions

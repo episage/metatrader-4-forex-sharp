@@ -1,27 +1,60 @@
 ﻿using System.ServiceProcess;
-using TradePlatform.MT4.Core;
 using log4net;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using TradePlatform.Bcl.ServiceProcess;
 
 namespace TradePlatform.MT4.SDK.WindowsService
 {
-    public partial class TradePlatformExperts : ServiceBase
+
+    public partial class TradePlatformExperts : Service
     {
-        private readonly ILog _log = LogManager.GetLogger(typeof (TradePlatformExperts));
-        public TradePlatformExperts()
-        {
-            InitializeComponent();
-        }
+	    #region Constructors
 
-        protected override void OnStart(string[] args)
-        {
-            log4net.Config.XmlConfigurator.Configure();
-            Bridge.InitializeHosts();
-           _log.DebugFormat("Service started");
-        }
+	    public TradePlatformExperts()
+	    {
+		    InitializeComponent();
+	    }
 
-        protected override void OnStop()
-        {
-            _log.DebugFormat("Service stoped");
-        }
+	    internal TradePlatformExperts(params ServiceThread[] threads)
+		    : base(threads)
+	    {
+		    InitializeComponent();
+	    }
+
+	    #endregion // Constructors
+
+	    #region Static Methods
+
+	    internal static TradePlatformExperts Create()
+	    {
+		    TradePlatformExperts serviceInstance;
+		    List<ServiceThread> threads = null;
+
+		    try
+		    {
+			    threads = new List<ServiceThread>();
+			    threads.Add(new TradePlatformServiceThread());
+			    if (!threads.Any())
+			    {
+				    throw new ApplicationException("Cannot start service when no threads have been configured to run.");
+			    }
+
+			    serviceInstance = new TradePlatformExperts(threads.ToArray());
+
+			    threads.Clear();
+			    threads = null;
+		    }
+		    finally
+		    {
+			    threads?.ForEach(t => t.Dispose());
+		    }
+
+		    return serviceInstance;
+	    }
+
+	    #endregion // Static Methods
     }
 }

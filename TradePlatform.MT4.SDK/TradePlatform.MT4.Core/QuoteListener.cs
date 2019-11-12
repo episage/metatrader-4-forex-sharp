@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using TradePlatform.MT4.Core.Exceptions;
 
 namespace TradePlatform.MT4.Core
