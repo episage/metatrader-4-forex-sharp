@@ -1,8 +1,9 @@
-﻿namespace TradePlatform.MT4.SDK.API
+﻿using TradePlatform.MT4.Core;
+using TradePlatform.MT4.Core.Utils;
+
+namespace TradePlatform.MT4.SDK.API
 {
     using System;
-    using TradePlatform.MT4.Core;
-    using TradePlatform.MT4.Core.Utils;
 
     /// <summary>
     /// For each executable MQL4 program, a number of predefined variables is supported that reflect the state of the current price chart at the launching of a program: an expert, a script, or a custom indicator.

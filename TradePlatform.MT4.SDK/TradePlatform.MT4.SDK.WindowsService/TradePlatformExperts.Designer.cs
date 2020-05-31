@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using TradePlatform.MT4.Core;
 using log4net;
 
 namespace TradePlatform.MT4.SDK.WindowsService

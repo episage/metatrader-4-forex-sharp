@@ -1,13 +1,10 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using TradePlatform.MT4.Core;
 using TradePlatform.MT4.Core.Config;
 using TradePlatform.MT4.Core.Exceptions;
 using TradePlatform.MT4.Core.Utils;

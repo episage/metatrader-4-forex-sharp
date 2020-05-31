@@ -1,9 +1,9 @@
-﻿namespace TradePlatform.MT4.SDK.API
-{
-    using TradePlatform.MT4.Core;
-    using TradePlatform.MT4.Core.Utils;
+﻿using TradePlatform.MT4.Core;
+using TradePlatform.MT4.Core.Utils;
 
-    /// <summary>
+namespace TradePlatform.MT4.SDK.API
+{
+	/// <summary>
     /// A group of functions to access to the active account information. 
     /// </summary>
     public static class AccountInformation
